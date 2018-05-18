@@ -9,8 +9,12 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="archive" name="WapProject_NearByFood2.jar">
+            <element id="module-output" name="WapProject_NearByFood2" />
+          </element>
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="WapProject_NearByFood2/web/Web" />
     </root>
   </artifact>
 </component>
