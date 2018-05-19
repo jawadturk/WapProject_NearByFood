@@ -3,12 +3,10 @@ package models;
 public class Cuisine {
     public String id;
     public String name;
-    public String restaurantId;
 
-    public Cuisine(String id, String name, String restaurantId) {
+    public Cuisine(String id, String name) {
         this.id = id;
         this.name = name;
-        this.restaurantId = restaurantId;
     }
 
     public String getId() {
@@ -25,13 +23,5 @@ public class Cuisine {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getRestaurantId() {
-        return restaurantId;
-    }
-
-    public void setRestaurantId(String restaurantId) {
-        this.restaurantId = restaurantId;
     }
 }
