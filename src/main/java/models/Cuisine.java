@@ -1,6 +1,8 @@
 package models;
 
-public class Cuisine {
+import java.io.Serializable;
+
+public class Cuisine implements Serializable {
     public String id;
     public String name;
 
@@ -23,5 +25,13 @@ public class Cuisine {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Cuisine [" +
+                "id=" + this.id + ", " +
+                "name=" + this.name+
+                "]";
     }
 }

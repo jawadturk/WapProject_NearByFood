@@ -1,5 +1,7 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,9 @@ public class Restaurant {
     private String phoneNo;
     private Boolean isDisabled;
     private String address;
+    @JsonProperty("reviews")
     private List<Review> reviews;
+    @JsonProperty("cuisines")
     private List<Cuisine> cuisines;
 
     public Restaurant(String cityId, String name, String id, String phoneNo, Boolean isDisabled, String address) {

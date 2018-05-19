@@ -14,7 +14,9 @@
     <body>
 
         <div>
+            <p id="restaurantName">
 
+            </p>
         </div>
 
         <form id="exampelForm">
@@ -36,14 +38,10 @@
                             "resPara": $('#resPara').val()
                         })
                         .done(function (response) {
-                            //response = JSON.parse(response);
-                            debugger;
-                            console.log(response["reviews"]);
-                            console.log(response);
+                            alert(response);
                         })
                         .fail(function (response) {
-                            response = JSON.parse(response);
-                            console.log(response);
+                            alert(response);
                         });
                 });
             });

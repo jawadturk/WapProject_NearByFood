@@ -1,13 +1,16 @@
 package models;
 
-public class Review {
+import java.io.Serializable;
+
+public class Review implements Serializable {
     private String reviewId;
     private String restaurantId;
     private String reviewText;
     private String dateTime;
     private int userId;
 
-    public Review(String restaurantId, String reviewText, String dateTime, int userId) {
+    public Review(String reviewId, String restaurantId, String reviewText, String dateTime, int userId) {
+        this.reviewId = reviewId;
         this.restaurantId = restaurantId;
         this.reviewText = reviewText;
         this.dateTime = dateTime;
@@ -52,5 +55,15 @@ public class Review {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "Review [" +
+                "restaurantId=" + this.restaurantId + ", " +
+                "reviewText=" + this.reviewText+
+                "dateTime=" + this.dateTime+
+                "userId=" + this.userId+
+                "]";
     }
 }

@@ -5,12 +5,12 @@
          version="4.0">
 
     <servlet>
-        <servlet-name>ReviewServlet</servlet-name>
+        <servlet-name>ReviewDetailsServlet</servlet-name>
         <servlet-class>controllers.ReviewDetailsServlet</servlet-class>
     </servlet>
     
     <servlet-mapping>
-        <servlet-name>ReviewServlet</servlet-name>
+        <servlet-name>ReviewDetailsServlet</servlet-name>
         <url-pattern>/reviewServlet</url-pattern>
     </servlet-mapping>
 

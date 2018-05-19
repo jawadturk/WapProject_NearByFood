@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "ReviewDetailsServlet")
+//@WebServlet(name = "ReviewDetailsServlet")
 public class ReviewDetailsServlet extends HttpServlet {
 
     ObjectMapper mapper = new ObjectMapper();
