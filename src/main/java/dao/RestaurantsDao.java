@@ -20,9 +20,12 @@ public class RestaurantsDao {
 
     public void init() {
         restaurants = new ArrayList<>();
-        Restaurant restaurant1 = new Restaurant("1", "Example Restaurant 1 Chicago", "1", "123-123-1234",
-                false, "Burlington avenue, 123, Chicago", "g6.jpg");
+        Restaurant restaurant1 = new Restaurant("1", "Big Jones", "1", "(773) 275-5725",
+                false, "ANDERSONVILLE\n" +
+                "5347 N Clark St, Chicago, IL 60640\n" , "g6.jpg");
         restaurant1.addCuisines(new Cuisine("1", "Italian"));
+        restaurant1.addCuisines(new Cuisine("2", "Indian"));
+        restaurant1.addCuisines(new Cuisine("3", "American"));
         restaurant1.addReview(new Review("1","1", "Spent good time there!", "2018-05-19", 1));
         restaurant1.addReview(new Review("2","1", "It was okay!", "2018-05-18", 2));
         restaurants.add(restaurant1);
@@ -41,6 +44,14 @@ public class RestaurantsDao {
         restaurant3.addReview(new Review("5","3", "Spent good time there!", "2018-05-14", 1));
         restaurant3.addReview(new Review("6","3", "It was okay!", "2018-05-13", 2));
         restaurants.add(restaurant3);
+
+        Restaurant restaurant4 = new Restaurant("1", "Parachute", "4", "(773) 271-4710",
+                false, "RAVENSWOOD\n" +
+                "4710 N Ravenswood Ave, Chicago, IL 60640\n" , "g6.jpg");
+        restaurant4.addCuisines(new Cuisine("1", "Italian"));
+        restaurant4.addCuisines(new Cuisine("2", "Indian"));
+        restaurant4.addCuisines(new Cuisine("3", "American"));
+       restaurants.add(restaurant4);
     }
 
     public RestaurantsDao() {
