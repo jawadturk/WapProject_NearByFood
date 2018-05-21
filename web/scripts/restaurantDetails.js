@@ -1,8 +1,8 @@
 $(function () {
     $('#resPara').val("");
-    /*$('#exampelForm').css({
+    $('#exampelForm').css({
         "display" : "none"
-    });*/
+    });
 
     $('#loginOptionMainPage').click(function () {
         $.post('addReview', {}).done(function (res) {
