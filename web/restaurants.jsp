@@ -120,25 +120,26 @@
                             <div class="flipper agile-products">
                                 <div class="front">
 
+                                    <img src="<c:url value="/resources/images/${restaurant.thumbnailImage}"/>" class="img-responsive" alt="img">
 
-                                    <img src="<c:url value="/resources/images/g6.jpg"/>" class="img-responsive" alt="img">
-                                    <div class="agile-product-text">
-                                        <h5>Fish salad</h5>
+                                        <c:choose>
+                                            <c:when test="${status.index  % 2==0}">
+                                                 <div class="agile-product-text">
+                                            </c:when>
+                                            <c:otherwise>
+                                                <div class="agile-product-text agile-product-text2">
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <h5>${restaurant.name}</h5>
                                     </div>
                                 </div>
                                 <div class="back">
-                                    <h4>Fish salad</h4>
-                                    <p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
-                                    <h6>3<sup>$</sup></h6>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart">
-                                        <input type="hidden" name="add" value="1">
-                                        <input type="hidden" name="w3ls_item" value="Fish salad">
-                                        <input type="hidden" name="amount" value="3.00">
-                                        <button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                                        <span class="w3-agile-line"> </span>
+                                    <h4>${restaurant.name}</h4>
+                                    <p>${restaurant.address}</p>
+                                    <p>${restaurant.phoneNo}</p>
+
                                         <a href="#" data-toggle="modal" data-target="#myModal1">More</a>
-                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -154,6 +155,7 @@
 
 
                                 <img src="<c:url value="/resources/images/g6.jpg"/>" class="img-responsive" alt="img">
+
                                 <div class="agile-product-text">
                                     <h5>Fish salad</h5>
                                 </div>
@@ -314,10 +316,71 @@
         <div class="clearfix"> </div>
     </div>
 </div>
+</div>
 
 
-
-
+<!-- modal -->
+<div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <section>
+                <div class="modal-body">
+                    <div class="col-md-5 modal_body_left">
+                        <img src="images/s1.jpg" alt=" " class="img-responsive">
+                    </div>
+                    <div class="col-md-7 modal_body_right single-top-right">
+                        <h3 class="item_name">France Special Dish</h3>
+                        <p>Proin placerat urna et consequat efficitur, sem odio blandit enim</p>
+                        <div class="single-rating">
+                            <ul>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                <li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                <li class="rating">20 reviews</li>
+                                <li><a href="#">Add your review</a></li>
+                            </ul>
+                        </div>
+                        <div class="single-price">
+                            <ul>
+                                <li>$18</li>
+                                <li><del>$20</del></li>
+                                <li><span class="w3off">10% OFF</span></li>
+                                <li>Ends on : Dec,5th</li>
+                                <li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i> Coupon</a></li>
+                            </ul>
+                        </div>
+                        <p class="single-price-text">Fusce a egestas nibh, eget ornare erat. Proin placerat, urna et consequat efficitur, sem odio blandit enim, sit amet euismod turpis est mattis lectus. Vestibulum maximus quam et quam egestas imperdiet. In dignissim auctor viverra. </p>
+                        <form action="#" method="post">
+                            <input type="hidden" name="cmd" value="_cart" />
+                            <input type="hidden" name="add" value="1" />
+                            <input type="hidden" name="w3ls_item" value="France Special" />
+                            <input type="hidden" name="amount" value="18.00" />
+                            <button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </form>
+                        <a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+                        <div class="single-page-icons social-icons">
+                            <ul>
+                                <li><h4>Share on</h4></li>
+                                <li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
+                                <li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+                                <li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
+                                <li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
+                                <li><a href="#" class="fa fa-rss icon rss"> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- //modal -->
 
 
 <!-- the jScrollPane script -->
