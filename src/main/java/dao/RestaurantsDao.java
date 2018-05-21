@@ -7,10 +7,10 @@ import models.Review;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestaurantsDao {
-    private List<Restaurant> restaurants = null;
+public class  RestaurantsDao {
+    private static List<Restaurant> restaurants = null;
 
-    public RestaurantsDao() {
+    public void init(){
         restaurants = new ArrayList<>();
         Restaurant restaurant1 = new Restaurant("1", "Example Restaurant 1 Chicago", "1", "123-123-1234",
                 false, "Burlington avenue, 123, Chicago");
@@ -33,6 +33,13 @@ public class RestaurantsDao {
         restaurant3.addReview(new Review("5","3", "Spent good time there!", "2018-05-14", 1));
         restaurant3.addReview(new Review("6","3", "It was okay!", "2018-05-13", 2));
         restaurants.add(restaurant3);
+    }
+
+    public RestaurantsDao() {
+        if(!CookiesDao.isInit){
+            CookiesDao.isInit = true;
+            init();
+        }
     }
 
     public List<Restaurant> getRestaurants(){

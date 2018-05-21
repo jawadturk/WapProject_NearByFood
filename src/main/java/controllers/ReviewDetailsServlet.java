@@ -26,7 +26,8 @@ public class ReviewDetailsServlet extends HttpServlet {
         Restaurant restaurant = null;
 
         //Searching for the required Restaurant Obj
-        for (Restaurant res : restaurantsDao.getRestaurants()) {
+        List<Restaurant> restaurants = restaurantsDao.getRestaurants();
+        for (Restaurant res : restaurants) {
             if (res.getId().equalsIgnoreCase(resDetailId)) {
                 restaurant = res;
                 break;
@@ -37,11 +38,10 @@ public class ReviewDetailsServlet extends HttpServlet {
         PrintWriter out =response.getWriter();
         try{
             if(restaurant != null){
-                String check = mapper.writeValueAsString(restaurant);
-                out.print(check);
+                out.print(mapper.writeValueAsString(restaurant));
             }
             else {
-                out.print(mapper.writeValueAsString("No Restaurant found!"));
+                out.print(mapper.writeValueAsString("NoRestaurantFound"));
             }
         }catch (JsonGenerationException e) {
             System.out.print(e.getMessage());

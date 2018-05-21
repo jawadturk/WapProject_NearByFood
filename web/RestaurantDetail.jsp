@@ -8,43 +8,51 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
-    <head>
-        <title>Restaurant Detail</title>
-    </head>
-    <body>
+<head>
+    <title>Restaurant Detail</title>
+</head>
+<body>
 
-        <div>
-            <p id="restaurantName">
+<form id="exampelForm">
+    <input type="text" id="resPara" name="resPara" placeholder="restaurant Id" value="${restaurantId}">
+    <input type="button" id="btnSubmit" value="Submit">
+</form>
 
-            </p>
+<div>
+    <p id="restaurantName">
+
+    </p>
+    <p id="phoneNo">
+
+    </p>
+    <p id="address">
+
+    </p>
+
+    <div id="reviewsSection">
+        <p>
+            Reviews:
+        </p>
+        <div id="reviews">
+
         </div>
 
-        <form id="exampelForm">
-            <input type="text" id="resPara" name="resPara" placeholder="restaurant Id">
-            <input type="button" id="btnSubmit" value="Submit">
+        <form id="formNewReview" action="addReview" method="post">
+            <textarea name="txtNewReview" cols="50" rows="10">
+
+            </textarea>
+            <input type="text" name="txtRestaurantId" >
+            <input type="submit" value="Add Review">
         </form>
+    </div>
+</div>
 
-        <div id="resId">
 
-        </div>
+<div id="resId">
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script>
-            $(function () {
-                $('#btnSubmit').click(function () {
+</div>
 
-                    $.post('reviewServlet',
-                        {
-                            "resPara": $('#resPara').val()
-                        })
-                        .done(function (response) {
-                            alert(response);
-                        })
-                        .fail(function (response) {
-                            alert(response);
-                        });
-                });
-            });
-        </script>
-    </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./scripts/restaurantDetails.js"></script>
+</body>
 </html>
