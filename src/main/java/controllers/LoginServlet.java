@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
                     CookiesDao.CreateCookie(resp, "userName", req.getParameter("txtUserName"), 0);
                 }
             }
-            resp.sendRedirect("RestaurantDetail.jsp");
+            resp.sendRedirect("restaurants.jsp");
         }
     }
 }
