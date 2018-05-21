@@ -115,10 +115,10 @@
 
                         <div class="clearfix"></div>
                     </div>
+                    <div class="loader" id="loader" style="display: none;"></div>
                     <div id="myElementsContainer" class="products-row">
 
                         <c:forEach items="${restaurants}" var="restaurant" varStatus="status">
-                            <%--<li id="${city.id}"><a>${city.name}</a></li>--%>
 
                         <div class="col-xs-6 col-sm-4 product-grids">
                             <div class="flip-container">
