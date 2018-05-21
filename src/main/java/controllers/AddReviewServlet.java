@@ -52,16 +52,9 @@ public class AddReviewServlet extends HttpServlet {
                 counter++;
             }
 
-            List<Restaurant> restaurants2 = restaurants.getRestaurants();
-
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-            Date date = new Date();
-            System.out.println();
-            restaurant.addReview(new Review("", request.getParameter("txtRestaurantId"), reviewText, dateFormat.format(date).toString(), Integer.parseInt(user.getUserId())));
+            restaurant.addReview(new Review("", request.getParameter("txtRestaurantId"), reviewText, dateFormat.format(new Date()).toString(), Integer.parseInt(user.getUserId())));
             restaurants.getRestaurants().add(counter, restaurant);
-
-            List<Restaurant> restaurants3 = restaurants.getRestaurants();
-
             response.sendRedirect("RestaurantDetail.jsp");
         }
     }

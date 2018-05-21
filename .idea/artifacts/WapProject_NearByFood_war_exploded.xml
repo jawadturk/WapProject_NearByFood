@@ -18,8 +18,6 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.3" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="WapProject_NearByFood2/web/Web" />
-      <element id="javaee-facet-resources" facet="FixApp/web/Web" />
     </root>
   </artifact>
 </component>
