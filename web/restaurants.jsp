@@ -25,6 +25,7 @@
         <!-- js -->
         <script src="<c:url value="/resources/js/jquery-2.2.3.min.js" />"></script>
         <script src="<c:url value="/scripts/restaurantDetails.js" />"></script>
+        <script src="<c:url value="/scripts/DynamicRestaurants.js" />"></script>
         <!-- //js -->
         <!-- web-fonts -->
         <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
@@ -87,32 +88,29 @@
                 <div class="col-md-9 product-positiong">
                     <div class="product-top">
                         <h4>Restaurants</h4>
-                        <ul>
-                            <li class="dropdown head-dpdn">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuisine Type<span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu">
+
+
+
+                                <select id="cuisineTypeSelect"  name="cuisineType" required="">
+                                    <option value="">Cuisine Type</option>
                                     <c:forEach items="${cuisineType}" var="cuisine" varStatus="status">
-                                        <li id="${cuisine.id}"><a>${cuisine.name}</a></li>
+                                        <option value="${cuisine.id}">${cuisine.name}</option>
                                     </c:forEach>
+                                </select>
 
-                                </ul>
-                            </li>
-                            <li class="dropdown head-dpdn">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">City<span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu">
 
+                                <select id="citySelect"  name="cities" required="">
+                                    <option value="">Popular Cities</option>
                                     <c:forEach items="${citiesList}" var="city" varStatus="status">
-                                        <li id="${city.id}"><a>${city.name}</a></li>
+                                        <option value="${city.id}">${city.name}</option>
                                     </c:forEach>
 
-                                </ul>
-                            </li>
-                        </ul>
+                                </select>
+
+
                         <div class="clearfix"></div>
                     </div>
-                    <div class="products-row">
+                    <div id="myElementsContainer" class="products-row">
 
                         <c:forEach items="${restaurants}" var="restaurant" varStatus="status">
                             <%--<li id="${city.id}"><a>${city.name}</a></li>--%>
