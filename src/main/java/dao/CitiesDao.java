@@ -6,7 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CitiesDao {
+
+    private static CitiesDao instance;
     private List<City> cities = null;
+    public static CitiesDao getInstance(){
+        if(instance == null){
+            instance = new CitiesDao();
+        }
+        return instance;
+    }
+
+
 
     public CitiesDao(){
         cities = new ArrayList<>();

@@ -17,7 +17,21 @@ public class Restaurant {
     @JsonProperty("cuisines")
     private List<Cuisine> cuisines;
 
-    public Restaurant(String cityId, String name, String id, String phoneNo, Boolean isDisabled, String address) {
+    public String getThumbnailImage() {
+        return thumbnailImage;
+    }
+
+    public void setThumbnailImage(String thumbnailImage) {
+        this.thumbnailImage = thumbnailImage;
+    }
+
+    private String thumbnailImage;
+
+    public List<Cuisine> getCuisines() {
+        return cuisines;
+    }
+
+    public Restaurant(String cityId, String name, String id, String phoneNo, Boolean isDisabled, String address , String image) {
         this.cityId = cityId;
         this.name = name;
         this.id = id;
@@ -26,6 +40,7 @@ public class Restaurant {
         this.address = address;
         reviews = new ArrayList<>();
         cuisines = new ArrayList<>();
+        this.thumbnailImage=image;
     }
 
     public void addCuisines(Cuisine cuisine){

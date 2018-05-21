@@ -6,30 +6,32 @@ import java.util.List;
 public class City {
 
     private String id;
-    private String name;
 
-    public List<Restaurant> getRestaurants() {
-        return restaurants;
+    public String getId() {
+        return id;
     }
 
-    private List<Restaurant> restaurants;
-
-    public City(String name, String id) {
-        this.name = name;
+    public void setId(String id) {
         this.id = id;
-        restaurants = new ArrayList<>();
-    }
-
-    public void addRestaurant(Restaurant res){
-        restaurants.add(res);
     }
 
     public String getName() {
         return name;
     }
 
-    public String getID() {
-        return id;
+    public void setName(String name) {
+        this.name = name;
     }
+
+    private String name;
+
+    public City(String name, String id) {
+        this.name = name;
+        this.id = id;
+
+    }
+
+
+
 
 }

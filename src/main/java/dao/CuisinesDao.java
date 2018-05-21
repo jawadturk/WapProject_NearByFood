@@ -6,8 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CuisinesDao {
+    private static CuisinesDao instance;
     private List<Cuisine> cuisines = null;
-
+    public static CuisinesDao getInstance(){
+        if(instance == null){
+            instance = new CuisinesDao();
+        }
+        return instance;
+    }
     public CuisinesDao(){
         cuisines = new ArrayList<>();
         cuisines.add(new Cuisine("1", "Italian"));

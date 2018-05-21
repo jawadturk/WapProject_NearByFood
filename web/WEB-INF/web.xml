@@ -4,6 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+
+    <welcome-file-list>
+        <welcome-file>indexServlet</welcome-file>
+    </welcome-file-list>
+
     <servlet>
         <servlet-name>ReviewDetailsServlet</servlet-name>
         <servlet-class>controllers.ReviewDetailsServlet</servlet-class>
@@ -12,6 +17,28 @@
     <servlet-mapping>
         <servlet-name>ReviewDetailsServlet</servlet-name>
         <url-pattern>/reviewServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>servlets.IndexServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/indexServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>RestaurantsServlet</servlet-name>
+        <servlet-class>servlets.RestaurantsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RestaurantsServlet</servlet-name>
+        <url-pattern>/restaurants</url-pattern>
     </servlet-mapping>
 
 </web-app>
