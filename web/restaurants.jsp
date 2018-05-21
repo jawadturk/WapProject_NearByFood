@@ -20,11 +20,12 @@
         <link rel="stylesheet" type="text/css" media="all" href="<c:url value="/resources/css/style.css" />"/>
         <link rel="stylesheet" type="text/css" media="all" href="<c:url value='/resources/css/font-awesome.css' />"/>
         <link rel="stylesheet" type="text/css" media="all" href="<c:url value='/resources/css/owl.carousel.css' />"/>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
         <!-- //Custom Theme files -->
         <!-- js -->
         <script src="<c:url value="/resources/js/jquery-2.2.3.min.js" />"></script>
-        <script src="<c:url value="/scripts/restaurantDetails.js" />"></script>
+        <script src="<c:url value="/scripts/restaurantDetails.js" />" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" defer></script>
         <!-- //js -->
         <!-- web-fonts -->
         <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
@@ -41,13 +42,17 @@
 
                         <div class="w3ls-header-right">
                             <ul>
+                                <c:if test="${userName == null}">
+                                    <li class="head-dpdn">
+                                        <a id="loginOptionMainPage"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                                    </li>
+                                </c:if>
 
-                                <li class="head-dpdn">
-                                    <a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-                                </li>
-                                <li class="head-dpdn">
-                                    <a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-                                </li>
+                                <c:if test="${userName != null}">
+                                    <li class="head-dpdn">
+                                        <a href="/logout"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                                    </li>
+                                </c:if>
 
                             </ul>
                         </div>
@@ -182,8 +187,7 @@
                                 <span>Contact: </span><span id="phoneNo"></span>
                                 <div class="single-rating">
                                     <ul>
-                                        <li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                        <li class="rating">20 reviews</li>
+                                        <li class="reviewsCount"></li>
                                     </ul>
                                 </div>
 

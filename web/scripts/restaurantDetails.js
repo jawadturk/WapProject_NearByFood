@@ -4,6 +4,15 @@ $(function () {
         "display" : "none"
     });*/
 
+    $('#loginOptionMainPage').click(function () {
+        $.post('addReview', {}).done(function (res) {
+            res = JSON.parse(res);
+            if (res === "loginform.jsp") {
+                $(location).attr('href', 'http://localhost:8080/loginform.jsp');
+            }
+        });
+    });
+
     $('[name="moreOption"]').click(function () {
         var id = $(this).attr('id');
         $('#myModal1').modal('show');
@@ -47,10 +56,15 @@ $(function () {
                         $("[name='imgRes']").attr("src", "/resources/images/" + response["thumbnailImage"]);
                         if (response["reviews"] != null) {
 
+
+
                             $('#reviewsSection').show();
                             $('#reviews').html("");
 
                             let userReviewsArr = response["reviews"];
+
+                            $(".reviewsCount").html(userReviewsArr.length + " Reviews");
+
                             for (let index = 0; index < userReviewsArr.length; index++) {
                                 let exampleUserId = userReviewsArr[index].userId;
                                 $.post('userDetailsServlet', {
@@ -66,7 +80,11 @@ $(function () {
                                                     "css": {
                                                         "border": "1px solid black",
                                                         "overflow": "auto",
-                                                        "margin-top": "10px"
+                                                        "margin-top": "10px",
+                                                        "padding" : "10px",
+                                                        "width": "100%",
+                                                        "overflow-y": "auto",
+                                                        "overflow-x": "hidden"
                                                     }
                                                 })
                                                     .append(
@@ -82,6 +100,9 @@ $(function () {
                                                             "text": userReviewsArr[index].reviewText
                                                         })
                                                     )
+                                                    .append(
+                                                        $("<br/>")
+                                                     )
                                                     .append(
                                                         $("<span>", {
                                                             "text": userReviewsArr[index].dateTime,
@@ -107,20 +128,29 @@ $(function () {
     }
 
     $('#addReview').click(function () {
-        debugger;
-        $.post('addReview', {
-            "txtNewReview": $('[name="txtNewReview"]').val().trim(),
-            "txtRestaurantId": $('[name="txtRestaurantId"]').val().trim()
-        }).done(function (res) {
-            res = JSON.parse(res);
-            console.log(res);
-            if (res === "loginform.jsp") {
-                $(location).attr('href', 'http://localhost:8080/loginform.jsp')
-            }
-            else {
-                $('[name="txtNewReview"]').val("");
-                showDetails();
-            }
-        });
+        if($('[name="txtNewReview"]').val().trim() === ""){
+            toastr.error('Add valid text for review', ":(");
+        }
+        else {
+            $.post('addReview', {
+                "txtNewReview": $('[name="txtNewReview"]').val().trim(),
+                "txtRestaurantId": $('[name="txtRestaurantId"]').val().trim()
+            }).done(function (res) {
+                res = JSON.parse(res);
+                console.log(res);
+                if (res === "loginform.jsp") {
+                    $(location).attr('href', 'http://localhost:8080/loginform.jsp')
+                }
+                else {
+                    $('[name="txtNewReview"]').val("");
+                    toastr.success('Good job, Review Added!', ":)");
+                    showDetails();
+                }
+            }).fail(function (res) {
+                alert(res);
+            });
+
+        }
+
     });
 });
