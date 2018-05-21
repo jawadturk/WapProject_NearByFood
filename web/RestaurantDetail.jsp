@@ -13,10 +13,7 @@
 </head>
 <body>
 
-<form id="exampelForm">
-    <input type="text" id="resPara" name="resPara" placeholder="restaurant Id" value="${restaurantId}">
-    <input type="button" id="btnSubmit" value="Submit">
-</form>
+
 
 <div>
     <p id="restaurantName">

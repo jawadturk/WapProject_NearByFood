@@ -1,8 +1,19 @@
 $(function () {
-    debugger;
-    if($('input[name="resPara"]').val() != ""){
+
+    /*$('#exampelForm').css({
+        "display" : "none"
+    });*/
+
+    $('[name="moreOption"]').click(function() {
+        var id = $(this).attr('id');
+        $('#myModal1').modal('show');
+        $('#resPara').val(id);
         showDetails();
-    }
+    });
+
+    //if($('input[name="resPara"]').val() != ""){
+        //showDetails();
+    //}
 
     //validation on the form
     $('#formNewReview').submit(function (evt) {

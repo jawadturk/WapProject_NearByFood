@@ -36,26 +36,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
     <!-- //web-fonts -->
 </head>
-<body>
-
-
 <!-- login-page -->
 <div class="login-page about">
     <img class="login-w3img" src="<c:url value="/resources/images/img3.jpg"/>"  alt="">
     <div class="container">
         <h3 class="w3ls-title w3ls-title1">Login to your account</h3>
         <div class="login-agileinfo">
-            <form action="#" method="post">
-                <input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
-                <input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
+            <form action="login" method="post">
+                <input class="agile-ltext" type="text" name="txtUserName" placeholder="Username" required="" value="${userNameAutoFill}">
+                <input class="agile-ltext" type="password" name="txtPassword" placeholder="Password" required="">
                 <div class="wthreelogin-text">
                     <ul>
                         <li>
-                            <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>
+                            <label class="checkbox">
+                                <input type="checkbox" name="txtRememberMe" <c:if test="${userNameAutoFill != null}">checked</c:if>><i></i>
                                 <span> Remember me ?</span>
                             </label>
                         </li>
-
                     </ul>
                     <div class="clearfix"> </div>
                 </div>

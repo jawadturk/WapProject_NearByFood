@@ -27,7 +27,7 @@ public class AddReviewServlet extends HttpServlet {
             if (CookiesDao.CheckIfCookieExists(request)) {
                 request.getSession().setAttribute("userNameAutoFill", CookiesDao.GetCookieValue(request));
             }
-            response.sendRedirect("Login.jsp");
+            response.sendRedirect("loginform.jsp");
         } else {
             UsersDao users = new UsersDao();
             String reviewText = request.getParameter("txtNewReview");
