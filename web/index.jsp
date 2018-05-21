@@ -34,30 +34,6 @@
 <body>
 <!-- banner -->
 <div class="banner">
-  <!-- header -->
-  <div class="header">
-    <div class="w3ls-header"><!-- header-one -->
-      <div class="container">
-
-        <div class="w3ls-header-right">
-          <ul>
-
-            <li class="head-dpdn">
-              <a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-            </li>
-            <li class="head-dpdn">
-              <a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-            </li>
-
-          </ul>
-        </div>
-        <div class="clearfix"> </div>
-      </div>
-    </div>
-    <!-- //header-one -->
-
-  </div>
-  <!-- //header-end -->
   <!-- banner-text -->
   <div class="banner-text">
     <div class="container">

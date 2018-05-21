@@ -1,5 +1,6 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.CookiesDao;
 import dao.RestaurantsDao;
 import dao.UsersDao;
@@ -12,22 +13,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 public class AddReviewServlet extends HttpServlet {
+
+    ObjectMapper mapper = new ObjectMapper();
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.getSession().setAttribute("restaurantId", request.getParameter("txtRestaurantId"));
-
+        PrintWriter out = response.getWriter();
         if (request.getSession().getAttribute("userName") == null) {
             if (CookiesDao.CheckIfCookieExists(request)) {
                 request.getSession().setAttribute("userNameAutoFill", CookiesDao.GetCookieValue(request));
             }
-            response.sendRedirect("loginform.jsp");
+
+            out.print(mapper.writeValueAsString("loginform.jsp"));
+
         } else {
             UsersDao users = new UsersDao();
             String reviewText = request.getParameter("txtNewReview");
@@ -55,7 +62,7 @@ public class AddReviewServlet extends HttpServlet {
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             restaurant.addReview(new Review("", request.getParameter("txtRestaurantId"), reviewText, dateFormat.format(new Date()).toString(), Integer.parseInt(user.getUserId())));
             restaurants.getRestaurants().add(counter, restaurant);
-            response.sendRedirect("RestaurantDetail.jsp");
+            out.print(mapper.writeValueAsString("restaurants.jsp"));
         }
     }
 }
