@@ -24,4 +24,13 @@ public class UsersDao {
     public List<User> getUsers(){
         return users;
     }
+
+    public boolean AuthenticateUser(String userName, String password, List<User> usersList){
+        for(User user : usersList){
+            if(user.getName().equalsIgnoreCase(userName) && user.getPassword().equals(password)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
