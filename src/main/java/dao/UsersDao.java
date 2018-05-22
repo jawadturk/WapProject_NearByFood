@@ -11,10 +11,11 @@ public class UsersDao {
 
     public UsersDao() {
         users = new ArrayList<>();
-        users.add(new User("1", "John Doe", "john@example.com", "123"));
-        users.add(new User("2", "Aimal", "aimal@example.com", "123"));
-        users.add(new User("3", "Baky", "baky@example.com", "123"));
-        users.add(new User("4", "Jawad", "jawad@example.com", "123"));
+        users.add(new User("1", "John Doe", "john@example.com", "123", false));
+        users.add(new User("2", "Aimal", "aimal@example.com", "123", false));
+        users.add(new User("3", "Baky", "baky@example.com", "123", false));
+        users.add(new User("4", "Jawad", "jawad@example.com", "123", false));
+        users.add(new User("admin", "admin", "admin@gmail.com", "admin", true));
     }
 
     public void addUser(User user){

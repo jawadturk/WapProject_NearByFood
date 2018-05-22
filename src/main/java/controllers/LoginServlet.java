@@ -1,6 +1,8 @@
 package controllers;
 
 import dao.CookiesDao;
+import dao.CuisinesDao;
+import dao.RestaurantsDao;
 import dao.UsersDao;
 
 import javax.servlet.ServletException;
@@ -36,7 +38,22 @@ public class LoginServlet extends HttpServlet {
                     CookiesDao.CreateCookie(resp, "userName", req.getParameter("txtUserName"), 0);
                 }
             }
-            resp.sendRedirect("restaurants.jsp");
+
+            if (userName.equals("admin") && password.equals("admin"))
+            {
+                RestaurantsDao restaurantsDao = new RestaurantsDao();
+                req.getSession().setAttribute("restaurantsAdmin", restaurantsDao.getRestaurants());
+
+                CuisinesDao cuisinesDao = new CuisinesDao();
+                req.getSession().setAttribute("cuisineAdmin", cuisinesDao.getCuisines());
+
+                resp.sendRedirect("admin.jsp");
+            }
+            else {
+                req.getSession().removeAttribute("restaurantsAdmin");
+                req.getSession().removeAttribute("cuisineAdmin");
+                resp.sendRedirect("restaurants.jsp");
+            }
         }
     }
 }

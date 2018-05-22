@@ -23,6 +23,11 @@ public class CitiesDao {
         cities.add(new City("Chicago", "1"));
         cities.add(new City("Newyork", "2"));
         cities.add(new City("Fairfield", "3"));
+        cities.add(new City("Houston", "4"));
+        cities.add(new City("San Francisco", "5"));
+        cities.add(new City("Los Angeles", "6"));
+        cities.add(new City("Las Vegas", "7"));
+
     }
 
     public List<City> getCities(){

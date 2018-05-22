@@ -33,8 +33,8 @@ public class RestaurantsDao {
         Restaurant restaurant2 = new Restaurant("4", "Beaver’s", "2", "(713) 714-4111",
                 false, "GALLERIA\n" +
                 "6025 Westheimer Rd, Houston, TX 77057", "g7.jpg");
-        restaurant2.addCuisines(new Cuisine("3", ""));
-        restaurant2.addCuisines(new Cuisine("6", ""));
+        restaurant2.addCuisines(new Cuisine("3", "American"));
+        restaurant2.addCuisines(new Cuisine("6", "Fast Food"));
        restaurants.add(restaurant2);
 
         Restaurant restaurant3 = new Restaurant("4", "Benjy's", "3", "(713) 522-7602",
