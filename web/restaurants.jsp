@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Staple Food a Restaurants Category Bootstrap Responsive website Template | Home :: w3layouts</title>
+        <title>Near By Food</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="keywords" content=""/>
@@ -68,7 +68,7 @@
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header w3l_logo">
 
-                                <h1><a href="index.html">Staple<span>Best Food Collection</span></a></h1>
+                                <h1><a href="index.html">Near by Food!<span>Best Food Collection</span></a></h1>
                             </div>
 
 

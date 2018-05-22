@@ -52,6 +52,26 @@ public class RestaurantsDao {
         restaurant4.addCuisines(new Cuisine("2", "Indian"));
         restaurant4.addCuisines(new Cuisine("3", "American"));
        restaurants.add(restaurant4);
+
+        Restaurant restaurant5 = new Restaurant("3", "Paradiso", "5", "(773) 271-4710",
+                false, "Main Fairfield Square, Iowa" , "para.jpeg");
+        restaurant5.addCuisines(new Cuisine("3", "American"));
+        restaurants.add(restaurant5);
+
+        Restaurant restaurant6 = new Restaurant("3", "Indian Cafe", "6", "(773) 271-4710",
+                false, "Main Fairfield Square, Iowa" , "ls.jpg");
+        restaurant6.addCuisines(new Cuisine("2", "Indian"));
+        restaurants.add(restaurant6);
+
+        Restaurant restaurant7 = new Restaurant("3", "Imperial Buffet", "7", "(773) 271-4710",
+                false, "Main Fairfield Square, Iowa" , "imperial.jpg");
+        restaurant7.addCuisines(new Cuisine("1", "Italian"));
+        restaurants.add(restaurant7);
+
+        Restaurant restaurant8 = new Restaurant("3", "Pizza Ranch", "8", "(773) 271-4710",
+                false, "Main Fairfield Square, Iowa" , "pizzaranch.jpg");
+        restaurant8.addCuisines(new Cuisine("3", "American"));
+        restaurants.add(restaurant8);
     }
 
     public RestaurantsDao() {
