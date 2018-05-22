@@ -45,33 +45,33 @@ public class RestaurantsDao {
         restaurant3.addReview(new Review("6","3", "It was okay!", "2018-05-13", 2));
         restaurants.add(restaurant3);
 
-        Restaurant restaurant4 = new Restaurant("1", "Parachute", "4", "(773) 271-4710",
+        Restaurant restaurant14 = new Restaurant("1", "Parachute", "4", "(773) 271-4710",
                 false, "RAVENSWOOD\n" +
                 "4710 N Ravenswood Ave, Chicago, IL 60640\n" , "g6.jpg");
-        restaurant4.addCuisines(new Cuisine("1", "Italian"));
-        restaurant4.addCuisines(new Cuisine("2", "Indian"));
-        restaurant4.addCuisines(new Cuisine("3", "American"));
-       restaurants.add(restaurant4);
+        restaurant14.addCuisines(new Cuisine("1", "Italian"));
+        restaurant14.addCuisines(new Cuisine("2", "Indian"));
+        restaurant14.addCuisines(new Cuisine("3", "American"));
+       restaurants.add(restaurant14);
 
-        Restaurant restaurant5 = new Restaurant("3", "Paradiso", "5", "(773) 271-4710",
+        Restaurant restaurant10 = new Restaurant("3", "Paradiso", "5", "(773) 271-4710",
                 false, "Main Fairfield Square, Iowa" , "para.jpeg");
-        restaurant5.addCuisines(new Cuisine("3", "American"));
-        restaurants.add(restaurant5);
+        restaurant10.addCuisines(new Cuisine("3", "American"));
+        restaurants.add(restaurant10);
 
-        Restaurant restaurant6 = new Restaurant("3", "Indian Cafe", "6", "(773) 271-4710",
+        Restaurant restaurant11 = new Restaurant("3", "Indian Cafe", "6", "(773) 271-4710",
                 false, "Main Fairfield Square, Iowa" , "ls.jpg");
-        restaurant6.addCuisines(new Cuisine("2", "Indian"));
-        restaurants.add(restaurant6);
+        restaurant11.addCuisines(new Cuisine("2", "Indian"));
+        restaurants.add(restaurant11);
 
-        Restaurant restaurant7 = new Restaurant("3", "Imperial Buffet", "7", "(773) 271-4710",
+        Restaurant restaurant12 = new Restaurant("3", "Imperial Buffet", "7", "(773) 271-4710",
                 false, "Main Fairfield Square, Iowa" , "imperial.jpg");
-        restaurant7.addCuisines(new Cuisine("1", "Italian"));
-        restaurants.add(restaurant7);
+        restaurant12.addCuisines(new Cuisine("1", "Italian"));
+        restaurants.add(restaurant12);
 
-        Restaurant restaurant8 = new Restaurant("3", "Pizza Ranch", "8", "(773) 271-4710",
+        Restaurant restaurant13 = new Restaurant("3", "Pizza Ranch", "8", "(773) 271-4710",
                 false, "Main Fairfield Square, Iowa" , "pizzaranch.jpg");
-        restaurant8.addCuisines(new Cuisine("3", "American"));
-        restaurants.add(restaurant8);
+        restaurant13.addCuisines(new Cuisine("3", "American"));
+        restaurants.add(restaurant13);
     }
 
     public RestaurantsDao() {
