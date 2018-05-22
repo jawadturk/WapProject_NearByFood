@@ -30,28 +30,36 @@ public class RestaurantsDao {
         restaurant1.addReview(new Review("2","1", "It was okay!", "2018-05-18", 2));
         restaurants.add(restaurant1);
 
-        Restaurant restaurant2 = new Restaurant("2", "Example Restaurant 2 Newyork", "2", "123-123-1234",
-                false, "Burlington avenue, 123, Newyork", "g6.jpg");
-        restaurant2.addCuisines(new Cuisine("2", "Indian"));
-        restaurant2.addReview(new Review("3","2", "Spent good time there!", "2018-05-16", 3));
-        restaurant2.addReview(new Review("4","2", "It was okay!", "2018-05-15", 4));
-        restaurants.add(restaurant2);
+        Restaurant restaurant2 = new Restaurant("4", "Beaver’s", "2", "(713) 714-4111",
+                false, "GALLERIA\n" +
+                "6025 Westheimer Rd, Houston, TX 77057", "g7.jpg");
+        restaurant2.addCuisines(new Cuisine("3", ""));
+        restaurant2.addCuisines(new Cuisine("6", ""));
+       restaurants.add(restaurant2);
 
-        Restaurant restaurant3 = new Restaurant("3", "Example Restaurant 2 Fairfield", "3", "123-123-1234",
-                false, "Burlington avenue, 123, Fairfield", "g6.jpg");
+        Restaurant restaurant3 = new Restaurant("4", "Benjy's", "3", "(713) 522-7602",
+                false, "RICE VILLAGE\n" +
+                "2424 Dunstan Rd, Houston, TX 77005", "g8.jpg");
         restaurant3.addCuisines(new Cuisine("3", "American"));
-        restaurant3.addCuisines(new Cuisine("2", "Indian"));
+        restaurant3.addCuisines(new Cuisine("6", "Fast Food"));
         restaurant3.addReview(new Review("5","3", "Spent good time there!", "2018-05-14", 1));
         restaurant3.addReview(new Review("6","3", "It was okay!", "2018-05-13", 2));
         restaurants.add(restaurant3);
 
         Restaurant restaurant4 = new Restaurant("1", "Parachute", "4", "(773) 271-4710",
                 false, "RAVENSWOOD\n" +
-                "4710 N Ravenswood Ave, Chicago, IL 60640\n" , "g6.jpg");
+                "4710 N Ravenswood Ave, Chicago, IL 60640\n" , "g5.jpg");
         restaurant4.addCuisines(new Cuisine("1", "Italian"));
-        restaurant4.addCuisines(new Cuisine("2", "Indian"));
         restaurant4.addCuisines(new Cuisine("3", "American"));
        restaurants.add(restaurant4);
+
+
+        Restaurant restaurant5 = new Restaurant("6", "Outerlands", "5", "(415) 661-6140",
+                false, "OUTER SUNSET\n" +
+                "4001 Judah St, San Francisco, CA 94122" , "outerlands.jpg");
+
+        restaurant5.addCuisines(new Cuisine("3", "American"));
+        restaurants.add(restaurant5);
     }
 
     public RestaurantsDao() {
