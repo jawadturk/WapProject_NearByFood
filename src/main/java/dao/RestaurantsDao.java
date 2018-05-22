@@ -61,13 +61,7 @@ public class RestaurantsDao {
         restaurant5.addCuisines(new Cuisine("3", "American"));
         restaurants.add(restaurant5);
 
-        Restaurant restaurant14 = new Restaurant("1", "Parachute", "4", "(773) 271-4710",
-                false, "RAVENSWOOD\n" +
-                "4710 N Ravenswood Ave, Chicago, IL 60640\n" , "g6.jpg");
-        restaurant14.addCuisines(new Cuisine("1", "Italian"));
-        restaurant14.addCuisines(new Cuisine("2", "Indian"));
-        restaurant14.addCuisines(new Cuisine("3", "American"));
-        restaurants.add(restaurant14);
+   
 
         Restaurant restaurant10 = new Restaurant("3", "Paradiso", "5", "(773) 271-4710",
                 false, "Main Fairfield Square, Iowa" , "para.jpeg");
