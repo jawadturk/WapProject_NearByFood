@@ -111,6 +111,17 @@
         <url-pattern>/userDetailsServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>DynamicRestaurantsServlet</servlet-name>
+        <servlet-class>controllers.DynamicRestaurantsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DynamicRestaurantsServlet</servlet-name>
+        <url-pattern>/dynamicRestaurants</url-pattern>
+    </servlet-mapping>
+
+
     <filter>
         <filter-name>AuthenticatonFilter</filter-name>
         <filter-class>Filters.AuthenticationFilter</filter-class>

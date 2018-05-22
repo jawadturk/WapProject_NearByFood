@@ -25,7 +25,7 @@
         <!-- js -->
         <script src="<c:url value="/resources/js/jquery-2.2.3.min.js" />"></script>
         <script src="<c:url value="/scripts/DynamicRestaurants.js" />"></script>
-        <script src="<c:url value="/scripts/restaurantDetails.js" />" defer></script>
+        <script src="<c:url value="/scripts/restaurantDetails.js" />"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" defer></script>
         <!-- //js -->
         <!-- web-fonts -->
@@ -115,19 +115,17 @@
 
                         <div class="clearfix"></div>
                     </div>
+                    <div class="loader" id="loader" style="display: none;"></div>
+
+
                     <div id="myElementsContainer" class="products-row">
-
                         <c:forEach items="${restaurants}" var="restaurant" varStatus="status">
-                            <%--<li id="${city.id}"><a>${city.name}</a></li>--%>
-
                         <div class="col-xs-6 col-sm-4 product-grids">
                             <div class="flip-container">
                                 <div class="flipper agile-products">
                                     <div class="front">
-
                                         <img src="<c:url value="/resources/images/${restaurant.thumbnailImage}"/>"
                                              class="img-responsive" alt="img">
-
                                         <c:choose>
                                         <c:when test="${status.index  % 2==0}">
                                         <div class="agile-product-text">

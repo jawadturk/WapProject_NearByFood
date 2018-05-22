@@ -1,7 +1,8 @@
 $(function () {
+
     $('#resPara').val("");
     $('#exampelForm').css({
-        "display" : "none"
+        "display": "none"
     });
 
     $('#loginOptionMainPage').click(function () {
@@ -12,8 +13,9 @@ $(function () {
             }
         });
     });
-
-    $('[name="moreOption"]').click(function () {
+//sdfsdf
+    $(document).on('click', '[name="moreOption"]', function () {
+        debugger;
         var id = $(this).attr('id');
         $('#myModal1').modal('show');
         $('#resPara').val(id);
@@ -37,7 +39,7 @@ $(function () {
     $('#btnSubmit').click(showDetails);
 
     function showDetails() {
-
+        debugger;
         $.post('reviewServlet',
             {
                 "resPara": $('#resPara').val()
@@ -55,7 +57,6 @@ $(function () {
                         $('#address').html(response["address"]);
                         $("[name='imgRes']").attr("src", "/resources/images/" + response["thumbnailImage"]);
                         if (response["reviews"] != null) {
-
 
 
                             $('#reviewsSection').show();
@@ -81,7 +82,7 @@ $(function () {
                                                         "border": "1px solid black",
                                                         "overflow": "auto",
                                                         "margin-top": "10px",
-                                                        "padding" : "10px",
+                                                        "padding": "10px",
                                                         "width": "100%",
                                                         "overflow-y": "auto",
                                                         "overflow-x": "hidden"
@@ -102,7 +103,7 @@ $(function () {
                                                     )
                                                     .append(
                                                         $("<br/>")
-                                                     )
+                                                    )
                                                     .append(
                                                         $("<span>", {
                                                             "text": userReviewsArr[index].dateTime,
@@ -128,7 +129,7 @@ $(function () {
     }
 
     $('#addReview').click(function () {
-        if($('[name="txtNewReview"]').val().trim() === ""){
+        if ($('[name="txtNewReview"]').val().trim() === "") {
             toastr.error('Add valid text for review', ":(");
         }
         else {
