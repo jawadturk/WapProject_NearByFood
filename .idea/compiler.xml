@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="FixApp" />
+        <module name="Project1" />
         <module name="WapProject_NearByFood" />
         <module name="WapProject_NearByFood2" />
       </profile>

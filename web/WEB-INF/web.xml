@@ -10,6 +10,36 @@
     </welcome-file-list>
 
     <servlet>
+        <servlet-name>AddRestaurant</servlet-name>
+        <servlet-class>controllers.AddRestaurant</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddRestaurant</servlet-name>
+        <url-pattern>/addRestaurant</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddCuisine</servlet-name>
+        <servlet-class>controllers.AddCuisine</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddCuisine</servlet-name>
+        <url-pattern>/addCuisine</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetCitiesServlet</servlet-name>
+        <servlet-class>controllers.GetCitiesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetCitiesServlet</servlet-name>
+        <url-pattern>/getCities</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>ReviewDetailsServlet</servlet-name>
         <servlet-class>controllers.ReviewDetailsServlet</servlet-class>
     </servlet>

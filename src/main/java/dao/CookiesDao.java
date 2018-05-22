@@ -8,6 +8,7 @@ import java.io.IOException;
 public class CookiesDao {
 
     public static boolean isInit = false;
+    public static boolean cuisineFlag = false;
 
     public static boolean CheckIfCookieExists(HttpServletRequest req) throws IOException {
         for (Cookie cookie : req.getCookies()) {

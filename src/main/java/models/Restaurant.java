@@ -1,6 +1,7 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dao.CitiesDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,13 @@ public class Restaurant {
         reviews = new ArrayList<>();
         cuisines = new ArrayList<>();
         this.thumbnailImage=image;
+    }
+
+    public String getCityName() {
+        for (City city: new CitiesDao().getCities())
+            if (city.getId().equals(cityId))
+                return city.getName();
+        return "Unknown City Name";
     }
 
     public void addCuisines(Cuisine cuisine){

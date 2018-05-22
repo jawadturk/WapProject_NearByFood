@@ -7,12 +7,22 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private Boolean adminFlag;
 
-    public User(String userId, String name, String email, String password) {
+    public User(String userId, String name, String email, String password, Boolean adminFlag) {
         this.userId = userId;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.adminFlag = adminFlag;
+    }
+
+    public Boolean getAdminFlag() {
+        return this.adminFlag;
+    }
+
+    public void setAdminFlag(Boolean adminFlag) {
+        this.adminFlag = adminFlag;
     }
 
     public String getUserId() {
