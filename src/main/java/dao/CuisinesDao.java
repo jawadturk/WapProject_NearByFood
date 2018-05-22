@@ -21,6 +21,9 @@ public class CuisinesDao {
         cuisines.add(new Cuisine("1", "Italian"));
         cuisines.add(new Cuisine("2", "Indian"));
         cuisines.add(new Cuisine("3", "American"));
+        cuisines.add(new Cuisine("4", "Chinese"));
+        cuisines.add(new Cuisine("5", "Japanese"));
+        cuisines.add(new Cuisine("6", "Fast Food"));
     }
 
     public CuisinesDao(){
